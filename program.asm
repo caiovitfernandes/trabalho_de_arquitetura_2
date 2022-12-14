@@ -58,6 +58,33 @@ while:
   j while
 
 Saida:
+	mul $s7, $s0, $s0	# x2
+	mul $s0, $s7, $s0	# x3
+	mul $s7, $s0, $s3	# ax3
+	li  $t1, 11
+	mul $s7, $s7, $t1	# 11ax3
+	
+	mul $s1, $s1, $s1	# y2
+	mul $s1, $s1, $s4	# by2
+	li  $t1, 3
+	mul $s1, $s1, $t1	# 3by2
+	
+	mul $s0, $s2, $s2	# z2
+	mul $s2, $s0, $s2	# z3
+	mul $s2, $s5, $s2	# cz3
+	li  $t1, 7
+	mul $s2, $s2, $t1	# 7cz3
+	
+	mul $s6, $s6, $s0	# dz2
+	li  $t1, 2
+	mul $s6, $s6, $t1	# 2dz2
+	
+	sub $s7, $s7, $s1	# 11ax3 - 3by2
+	add $s7, $s7, $s2	# 11ax3 - 3by2 + 7cz3
+	sub $s7, $s7, $s6	# 11ax3 - 3by2 + 7cz3 - 2dz2
+	
+	la $a0, $s7
+	jal imprimeInteiro
 
 leVariaveis:
 	move $t0, $ra
