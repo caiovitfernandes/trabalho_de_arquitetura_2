@@ -1,3 +1,7 @@
+# implementação de um programa para ler e imprimir valores e também para o cálculo de equação 
+# Autores: Caio Vitor Souza Fernandes, Lucas Ferreira Guedes, Roberto Eller Paiva e Thais Alves Silva
+# Data: 14/12/2022
+# Versão 1.0 – Versão inicial
 .text 
 main:
 	#Ler e imprimir o nome dos integrantes do grupo && Ler e imprimir a matricula dos integrantes do grupo
